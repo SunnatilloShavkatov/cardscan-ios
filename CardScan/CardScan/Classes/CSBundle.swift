@@ -11,7 +11,7 @@ import Foundation
 public class CSBundle {
     // If you change the bundle name make sure to set these before
     // initializing the library
-    public static var bundleIdentifier = "com.getbouncer.CardScan"
+    public static var bundleIdentifier = "uz.shs.cardscan.CardScan"
     public static var cardScanBundle: Bundle?
     public static var namedBundle = "CardScan"
     public static var namedBundleExtension = "bundle"
@@ -24,6 +24,11 @@ public class CSBundle {
         
         if let bundle = Bundle(identifier: bundleIdentifier) {
             return bundle
+        }
+
+        let classBundle = Bundle(for: CSBundle.self)
+        if classBundle.bundleURL.pathExtension == "framework" || classBundle.url(forResource: "CardScan", withExtension: "storyboardc") != nil {
+            return classBundle
         }
         
         // as a fall back try getting a named bundle for cases when we deploy as source

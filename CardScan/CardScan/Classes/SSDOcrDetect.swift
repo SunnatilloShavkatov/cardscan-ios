@@ -55,7 +55,7 @@ struct SSDOcrDetect {
         if let pixelBuffer = newImage?.pixelBuffer(width: ssdOcrImageWidth,
                                                    height: ssdOcrImageHeight){
             let input = SSDOcrInput(_0: pixelBuffer)
-            let _ = try? ssdOcrModel.prediction(input: input)
+            let _ = try? ssdOcrModel.prediction(fromFeatures: input)
         }
     }
     
@@ -168,7 +168,7 @@ struct SSDOcrDetect {
         
         let input = SSDOcrInput(_0: pixelBuffer)
         
-        guard let prediction = try? ocrDetectModel.prediction(input: input) else {
+        guard let prediction = try? ocrDetectModel.prediction(fromFeatures: input) else {
             print("Ocr Couldn't predict")
             return nil
         }

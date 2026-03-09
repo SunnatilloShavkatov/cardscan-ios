@@ -299,13 +299,13 @@ import UIKit
     
     open func setupCloseButtonConstraints() {
         let margins = view.layoutMarginsGuide
-        closeButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: 16.0).isActive = true
+        closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 16.0).isActive = true
         closeButton.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
     }
     
     open func setupTorchButtonConstraints() {
         let margins = view.layoutMarginsGuide
-        torchButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: 16.0).isActive = true
+        torchButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 16.0).isActive = true
         torchButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
     }
     
